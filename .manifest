@@ -1,0 +1,6 @@
+{
+	"platforms": ["web"],
+	"apps": {"vc": "index"},
+	"templater": "jinja2",
+	"minify": true
+}
