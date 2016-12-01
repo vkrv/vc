@@ -4,7 +4,7 @@ Item {
 	Rectangle {
 		width: 100%;
 		height: 30%;
-		y: parent.height - height;
+		y: 70%;
 		color: "#424242";
 	}
 
@@ -15,7 +15,7 @@ Item {
 		Image {
 			source: "res/seat.svg";
 			width: 22%; height: 70%;
-			x: 10; y: parent.height - height + 30;
+			x: 1%; y: 42%;
 		}
 	}
 
@@ -26,7 +26,7 @@ Item {
 		border.width: 8;
 		border.color: "#FAFAFA";
 		radius: 5;
-		x: parent.width - width;
+		x: 55%;
 
 		ImageMixin {
 			source: "res/sf.jpg";
@@ -36,8 +36,8 @@ Item {
 
 	Rectangle {
 		width: 80%;
-		x: width * 0.1;
-		y: height;
+		x: 10%;
+		y: 50%;
 		color: "#FFECB3";
 		height: 50%;
 
