@@ -1,6 +1,6 @@
 Rectangle {
 	property bool open;
-	property Mixin hover: HoverMixin {}
+	property Mixin hover: HoverMixin { cursor: "pointer"; }
 	color: open ? "#F5F5F5" : "#FAF";
 //	visible: !open;
 	border.width: 1;
