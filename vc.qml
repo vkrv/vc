@@ -18,6 +18,7 @@ Item {
 			height: 70%;
 			width: height;
 			y: 42%;
+			DragMixin {}
 		}
 	}
 
@@ -48,6 +49,7 @@ Item {
 			fillMode: Image.PreserveAspectFit;
 			width: 30%; height: width;
 			x: 70%; y: -height / 2;
+			DragMixin {}
 		}
 	}
 
@@ -64,6 +66,7 @@ Item {
 		height: open ? ltr.height * 0.33 : ltr.height * 0.33 * 0.2;
 		x: open ? 25% : 20%; 
 		y: open ? 36.4% : 55%;
+		DragMixin {}
 
 		onClicked: { this.open = true; ltr.open = true;}
 	}
