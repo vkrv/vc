@@ -33,6 +33,7 @@ Item {
 			Text {
 				width: 90%; height: 90%;
 				x: 5%; y: 5%;
+				clip: true;
 				text: "Iranian President Hassan Rouhani has met with former Cuban leader Fidel Castro and his brother President Raul Castro during a one-day state visit in Havana. <br>Monday’s sit-down with Fidel Castro was an unusual encounter since Cuba’s 90-year-old retired president receives only a few people.";
 				wrapMode: Text.WordWrap;
 				opacity: letter.open ? 1 : 0;
@@ -52,6 +53,7 @@ Item {
 		Text {
 			width: 90%; height: 90%;
 			x: 5%; y: 5%;
+			clip: true;
 			text: "Officials did not say where they talked, but photos appeared to show them inside Castro’s home. A government statement said the two leaders discussed the importance of food production and threats to world peace. <br>Rouhani met separately with Raul Castro, who took over leadership of Cuba’s government in 2006 after his brother fell ill. Officials did not comment on their discussions";
 			wrapMode: Text.WordWrap;
 			Behavior on width, height { Animation { delay: letter.open ? 0 : 1000; duration: 1000; }}
@@ -79,6 +81,7 @@ Item {
 			Text {
 				width: 90%; height: 90%;
 				x: 5%; y: 5%;
+				clip: true;
 				text: "Iran’s president came to Cuba after attending the Non-Aligned Movement summit in Venezuela, which is the island’s main commercial and political partner.";
 				wrapMode: Text.WordWrap;
 				opacity: letter.open ? 1 : 0;
