@@ -46,13 +46,25 @@ Item {
 		Image {
 			source: "res/plant.png";
 			fillMode: Image.PreserveAspectFit;
-			width: 30%; height: 70%;
-			x: 70%; y: -50%;
+			width: 30%; height: width;
+			x: 70%; y: -height / 2;
 		}
 	}
 
 	Letter {
-		x: open ? 25% : 0%; 
-		y: open ? 10% : 35%;
+		id: ltr;
+		x: 25%; 
+		y: 10%;
+		onClicked: { this.open = false; cover.open = false;}
+	}
+
+	Cover {
+		id: cover;
+		width: open ? ltr.width : ltr.width * 0.2;
+		height: open ? ltr.height * 0.33 : ltr.height * 0.33 * 0.2;
+		x: open ? 25% : 20%; 
+		y: open ? 36.4% : 55%;
+
+		onClicked: { this.open = true; ltr.open = true;}
 	}
 }
