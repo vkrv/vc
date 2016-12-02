@@ -1,5 +1,6 @@
 Item {
 	anchors.fill: context;
+	clip: true;
 
 	Rectangle {
 		width: 100%;
@@ -14,8 +15,9 @@ Item {
 
 		Image {
 			source: "res/seat.svg";
-			width: 22%; height: 70%;
-			x: 1%; y: 42%;
+			height: 70%;
+			width: height;
+			y: 42%;
 		}
 	}
 
@@ -45,7 +47,12 @@ Item {
 			source: "res/plant.png";
 			fillMode: Image.PreserveAspectFit;
 			width: 30%; height: 70%;
-			x: parent.width - width - 30; y: -height/2;
+			x: 70%; y: -50%;
 		}
+	}
+
+	Letter {
+		x: open ? 25% : 0%; 
+		y: open ? 10% : 35%;
 	}
 }
