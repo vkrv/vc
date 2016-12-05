@@ -5,9 +5,24 @@ Item {
 	visible: open;
 	property bool open;
 	property Mixin hover: HoverMixin { cursor: "pointer";}
-//	onClicked: { this.open = !this.open; }
 	Behavior on visible { Animation { delay: letter.open ? 750 : 600; duration: 0; }}
 	z: 1;
+
+	show(inst): {
+		this._coverInst = inst;
+		this.open = true;
+	}
+
+	close: {
+		this._coverInst.open = false;
+		this.open = false;
+	}
+
+	remove: {
+		this._coverInst.open = false;
+		this.open = false;
+		this._coverInst.remove();
+	}
 
 	Item {
 		transform.rotateX: letter.open ? 0 : -180;
