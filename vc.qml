@@ -71,8 +71,8 @@ Item {
 			x: open ? 25% : 15% + model.x; 
 			y: open ? 36.4% : 55% + model.y;
 			DragMixin {}
-
-			onClicked: { this.open = true; ltr.show(this);}
+			onClicked: { this.remove();}
+//			onClicked: { this.open = true; ltr.show(this);}
 		}
 
 		model: ListModel {
@@ -81,8 +81,8 @@ Item {
 
 				for ( var i = 0; i < 7; ++i) {
 					this.append({
-						x: i * 8,
-						y: i * 20,
+						x: i * 100,
+						y: i * 0,
 						color: c[i]
 					});
 				}

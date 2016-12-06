@@ -4,7 +4,7 @@ Item {
 	height: 80%;
 	visible: open;
 	property bool open;
-	property Mixin hover: HoverMixin { cursor: "pointer";}
+	property Mixin hover: HoverMixin {}
 	Behavior on visible { Animation { delay: letter.open ? 750 : 600; duration: 0; }}
 	z: 1;
 
@@ -19,7 +19,7 @@ Item {
 	}
 
 	remove: {
-		this._coverInst.open = false;
+//		this._coverInst.open = false;
 		this.open = false;
 		this._coverInst.remove();
 	}
@@ -82,7 +82,7 @@ Item {
 			height: 50%;
 			border.width: 1; border.color: "gray";
 			border.top.width: 1; border.top.color: "white";
-			color: letter.open ? "#FFF" : "#DADADA";
+			color: letter.open ? "#FFF" : "#F5F5F5";
 			Behavior on background { Animation { duration: 0; delay: letter.open ? 1600 : 200; }}
 			Text {
 				width: 90%; height: 90%;
@@ -92,6 +92,21 @@ Item {
 				wrapMode: Text.WordWrap;
 				opacity: letter.open ? 1 : 0;
 				Behavior on opacity { Animation { duration: 0; delay: letter.open ? 1600 : 200; }}
+			}
+
+			Text {
+				verticalAlignment: Text.AlignBottom;
+				horizontalAlignment: Text.AlignRight;
+				width: 90%; height: 90%;
+				x: 5%; y: 5%;
+				HoverMixin { cursor: "pointer"; }
+				color: "red";
+				text: "DELETE";
+
+				onClicked: {
+					log("DELETE onClicked")
+					letter.remove();
+				}
 			}
 		}
 	}
