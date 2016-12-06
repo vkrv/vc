@@ -82,7 +82,7 @@ Item {
 			height: 50%;
 			border.width: 1; border.color: "gray";
 			border.top.width: 1; border.top.color: "white";
-			color: letter.open ? "#FFF" : "#FAFAFA";
+			color: letter.open ? "#FFF" : "#DADADA";
 			Behavior on background { Animation { duration: 0; delay: letter.open ? 1600 : 200; }}
 			Text {
 				width: 90%; height: 90%;
