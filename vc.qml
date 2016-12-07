@@ -38,29 +38,31 @@ Item {
 	Rectangle { // Table
 		width: 80%;
 		x: 10%;
-		y: 50%;
+		y: 45%;
 		color: "#FFECB3";
-		height: 50%;
+		height: 55%;
+		transform.rotateX: 20;
+		transform.perspective: 1000;
 
+	}
 
-		Image {
-			source: "res/plant.png";
-			fillMode: Image.PreserveAspectFit;
-			width: height / 2; height: 30%;
-			x: parent.width - width - 20; y: 20 - height;
-			z: 1;
-			DragMixin { direction: DragMixin.Horizontal; }
-		}
+	Image {
+		source: "res/plant.png";
+		fillMode: Image.PreserveAspectFit;
+		width: height / 2; height: 20%;
+		x: 50%; y: 50% - height;
+		z: 1;
+		DragMixin { direction: DragMixin.Horizontal; }
+	}
 
-		Image {
-			source: "res/comp4.png";
-			fillMode: Image.PreserveAspectFit;
-			width: height; height: 50%;
-			x: 50%;
-			z: 1;
-			DragMixin {}
-			HoverMixin { cursor: "pointer"; }
-		}
+	Image {
+		source: "res/comp4.png";
+		fillMode: Image.PreserveAspectFit;
+		width: height; height: 25%;
+		x: 60%; y: 50%;
+		z: 1;
+		DragMixin {}
+		HoverMixin { cursor: "pointer"; }
 	}
 
 	Repeater {
@@ -68,22 +70,16 @@ Item {
 		width: 100%;
 		height: 100%;
 		delegate: Cover {
-			x: open ? 25% : 15% + model.x; 
-			y: open ? 36.4% : 55% + model.y;
 			DragMixin {}
-			onClicked: { this.remove();}
-//			onClicked: { this.open = true; ltr.show(this);}
+			onClicked: { this.open = true; ltr.show(this);}
 		}
 
 		model: ListModel {
 			update: {
-				var c = ["#0091EA", "#689F38", "#00E676", "#00BFA5", "#00E5FF", "#0277BD", "#03A9F4", "#82B1FF", "#D1C4E9", "#FF5252", "#FF5722", "#FFD600", "#FF6D00", "#795548", "#FFEB3B", "#FFC107", "#2E7D32", "#CDDC39", "#84FFFF", "#01579B", "#C8E6C9", "#FFEB3B", "#FFECB3", "#D7CCC8", "#DD2C00", "#DD2C00", "#80DEEA", "#B39DDB", "#880E4F", "#FCE4EC", "#FF1744", "#B388FF", "#006064", "#B2FF59", "#E65100", "#FF7043", "#FF6F00"];
-
 				for ( var i = 0; i < 7; ++i) {
 					this.append({
 						x: i * 100,
-						y: i * 0,
-						color: c[i]
+						y: i * 0
 					});
 				}
 			}
