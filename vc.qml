@@ -23,16 +23,23 @@ Item {
 		radius: 5;
 		x: 55%;
 		z: 1;
+		property Mixin hover: HoverMixin {}
 
 		ImageMixin {
 			source: "res/sf.jpg";
 			fillMode: Image.PreserveAspectCrop;
 		}
 
-		HoverMixin {}
-		onClicked: {
-			log ("window clicked", context.fullscreen)
-			context.fullscreen = !context.fullscreen 
+		MaterialIcon {
+			x: 100% - width - 10; 
+			y: 10;
+			icon: context.fullscreen ? "fullscreen_exit" : "fullscreen";
+			size: 100;
+			color: "white";
+			visible: parent.hover.value;
+
+			HoverMixin { cursor: "pointer"; }
+			onClicked: { context.fullscreen = !context.fullscreen }
 		}
 	}
 
