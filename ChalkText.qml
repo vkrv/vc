@@ -1,5 +1,5 @@
 H2 { 
-	text: " <span style='color: #EEEEEE'> Income: </span> 77 895 415.23$";
+	text: " <span style='color: #EEEEEE'> Income: </span>" + _globals.pure.format.currency(77895415.2223, 2) + "$";
 	font.weight: 300;
 	color: "#B2EBF2";
 	property int colorNum;
