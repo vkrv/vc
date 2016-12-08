@@ -13,12 +13,6 @@ Item {
 		width: 100%; height: 70%;
 		color: "#81C784";
 
-		Image {
-			source: "res/seat.svg";
-			height: 70%;
-			width: height;
-			y: 42%;
-		}
 	}
 
 	Rectangle {
@@ -28,11 +22,42 @@ Item {
 		border.color: "#FAFAFA";
 		radius: 5;
 		x: 55%;
+		z: 1;
 
 		ImageMixin {
 			source: "res/sf.jpg";
 			fillMode: Image.PreserveAspectCrop;
 		}
+
+		HoverMixin {}
+		onClicked: {
+			log ("window clicked", context.fullscreen)
+			context.fullscreen = !context.fullscreen 
+		}
+	}
+
+	Image {
+		source: "res/seat.svg";
+		height: 40%; width: height;
+		x: 80%;	y: 35%;
+	}
+
+	Rectangle {
+		x: 5%; y: 5%;
+		width: 40%; height: 40%;
+		border.width: 12;
+		radius: 2;
+		z: 1;
+		border.color: "#8D6E63";
+		ImageMixin { source: "res/chalkboard.jpg"; }
+
+		ChalkText { x: 5; y: 5;	font.family: "Shadows Into Light"; }
+		ChalkText { x: 5; y: 45;	font.family: "Reenie Beanie"; }
+		ChalkText { x: 5; y: 85;	font.family: "Cabin Sketch"; }
+		ChalkText { x: 5; y: 125;	font.family: "Chelsea Market"; }
+		ChalkText { x: 5; y: 165;	font.family: "Coming Soon"; }
+		ChalkText { x: 5; y: 205;	font.family: "Gloria Hallelujah"; }
+		ChalkText { x: 5; y: 245;	font.family: "Kalam"; }
 	}
 
 	Rectangle { // Table
@@ -43,7 +68,6 @@ Item {
 		height: 55%;
 		transform.rotateX: 20;
 		transform.perspective: 1000;
-
 	}
 
 	Image {
@@ -58,8 +82,8 @@ Item {
 	Image {
 		source: "res/comp4.png";
 		fillMode: Image.PreserveAspectFit;
-		width: height; height: 25%;
-		x: 60%; y: 50%;
+		width: height; height: 40%;
+		x: 85% - width; y: 40%;
 		z: 1;
 		DragMixin {}
 		HoverMixin { cursor: "pointer"; }
@@ -70,7 +94,6 @@ Item {
 		width: 100%;
 		height: 100%;
 		delegate: Cover {
-			DragMixin {}
 			onClicked: { this.open = true; ltr.show(this);}
 		}
 

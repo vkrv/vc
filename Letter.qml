@@ -29,7 +29,6 @@ Item {
 		transform.perspective: 1000;
 		width: 100%;
 		height: 66%;
-//		y: parent.open ? 0 : 33%;
 		z: 2;
 		Behavior on transform, y, z { Animation { duration: 400; delay: letter.open ? 1000 : 400; easing: "linear";}}
 
@@ -95,10 +94,9 @@ Item {
 			}
 
 			Text {
-				verticalAlignment: Text.AlignBottom;
-				horizontalAlignment: Text.AlignRight;
-				width: 90%; height: 90%;
-				x: 5%; y: 5%;
+				anchors.right: parent.right;
+				anchors.bottom: parent.bottom;
+				anchors.margins: 10;
 				HoverMixin { cursor: "pointer"; }
 				color: "red";
 				text: "DELETE";
