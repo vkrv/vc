@@ -8,6 +8,7 @@ Rectangle {
 	property bool open;
 	property int idx: model.index;
 	property Mixin hover: HoverMixin { cursor: "pointer"; }
+	DragMixin {}
 	color: open ? "#F5F5F5" : coverColor;
 	property Color coverColor;
 	border.width: 1;
