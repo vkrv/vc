@@ -1,5 +1,5 @@
 {
 	"platforms": ["web"],
 	"apps": {"vc": "index"},
-	"minify": false
+	"minify": true
 }
