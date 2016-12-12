@@ -1,6 +1,6 @@
 ]#!/bin/sh
 
-./qmlcore/build -r
+./qmlcore/build -m -r
 git checkout gh-pages
 git pull
 cp -r .app.web/* .
