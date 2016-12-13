@@ -20,7 +20,14 @@ Item {
 		width: 100%;
 		height: 100%;
 		delegate: Cover {
-			onClicked: { this.open = true; ltr.show(this);}
+			onClicked: {
+				if (this.drag.moved)
+					this.drag.moved = false;
+				else {
+					this.open = true; 
+					ltr.show(this);
+				}
+			}
 		}
 
 		model: ListModel {
