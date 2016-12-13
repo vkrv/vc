@@ -8,7 +8,7 @@ Rectangle {
 	property bool open;
 	property int idx: model.index;
 	property Mixin hover: HoverMixin { cursor: "pointer"; }
-	DragMixin {}
+	property Mixin drag: DragMixin {}
 	color: open ? "#F5F5F5" : coverColor;
 	property Color coverColor;
 	border.width: 1;
@@ -20,7 +20,7 @@ Rectangle {
 	transform.translateY: hover.value && !open ? -20 : 0;
 	Behavior on width, height, x, y, transform, background { 
 		Animation {
-			duration: 750; 
+			duration: parent.drag.pressed ? 0 : 750; 
 			delay: parent.open || parent.hover.value ? 0 : 600; 
 			}
 	}

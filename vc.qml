@@ -15,17 +15,6 @@ Item {
 
 	}
 
-	Rectangle { // Table
-		width: 80%;
-		x: 10%;
-		y: 45%;
-		color: "#FFECB3";
-		height: 55%;
-		transform.rotateX: 20;
-		transform.perspective: 1000;
-	}
-
-
 	Repeater {
 		id: letterView;
 		width: 100%;
@@ -49,6 +38,7 @@ Item {
 			}
 		}
 	}
+
 
 	Rectangle {
 		width: 45%;
@@ -83,6 +73,16 @@ Item {
 		source: "res/seat.svg";
 		height: 40%; width: height;
 		x: 80%;	y: 35%;
+	}
+
+	Rectangle { // Table
+		width: 80%;
+		x: 10%;
+		y: 45%;
+		color: "#FFECB3";
+		height: 55%;
+		transform.rotateX: 20;
+		transform.perspective: 1000;
 	}
 
 	Rectangle {
